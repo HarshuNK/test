@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function subArraySum(arr) {
+        let x = arr[0];
+        let y= arr[0];
+    
+        for (let i=1; i < arr.length; i++) {
+           x = Math.max(arr[i], x + arr[i]);
+            y = Math.max(y, x);
+        }
+    
+        return y;
+    }
+    
+    const arr = [-2, -3, 4, -1, -2, 1, 5, -3];
+    console.log(subArraySum(arr)); // Output: 7 (the subarray is [4, -1, -2, 1, 5])
+    </script>
+</body>
+</html>

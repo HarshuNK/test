@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+           function norepeat(str) {
+             let maxLength = 0, start = 0, charIndexMap = {};
+             for (let end = 0; end < str.length; end++) {
+              const currentChar = str[end];
+              start = Math.max(start, (charIndexMap[currentChar] || 0) + 1);
+              charIndexMap[currentChar] = end;
+              maxLength = Math.max(maxLength, end - start + 1);
+                 }
+               return maxLength;
+            }
+
+        const str = "ABCDEFGABEF";
+       console.log(norepeat(str)); 
+
+    </script>
+</body>
+</html>
